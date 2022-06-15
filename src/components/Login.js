@@ -17,7 +17,7 @@ const Login = () => {
     setError("");
     try {
       await logIn(email, password);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       setError(err.message);
     }
@@ -27,7 +27,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -35,50 +35,52 @@ const Login = () => {
 
   return (
     <>
-       <center><div className="container" style={{padding:" 15% 30%",borderColor:"lightblue"}}>
-       <h2 className="mt-3"> Login</h2>
+<div style={{backgroundColor:" #a8f1ea",marginLeft:"30%",marginRight:"30%",marginTop:"15%",marginBottom:"15%"}}>
+      <div className="container " style={{ padding: " 15% 30%", borderColor: "lightblue", textAlign: "center" }}>
+        <h1 className="mt-3 "> Login</h1><br />
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
-          <Form.Group   controlId="formBasicEmail">
-            <Form.Control style={{padding: "3% 12%"}}
+          <Form.Group controlId="formBasicEmail">
+            <Form.Control style={{ padding: "3% 12%" }}
               type="email"
               placeholder="Email address"
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
 
-          <Form.Group   controlId="formBasicPassword">
-            <Form.Control style={{padding: "3% 12%",marginTop:"4%"}}
+          <Form.Group controlId="formBasicPassword">
+            <Form.Control style={{ padding: "3% 12%", marginTop: "4%" }}
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <br/>
+          <br />
           <div className="d-grid gap-2">
-          <Button variant="primary"  style={{padding: "3% 12%"}} type="Submit" active>
-          Log In
-  </Button>
+            <Button variant="primary" style={{ padding: "3% 12%", backgroundColor: "#f1f1dc" }} type="Submit" active>
+              Log In
+            </Button>
           </div>
         </Form>
-         <br/>
-        <div>
+        <br />
+        <center>
           <GoogleButton
             className="g-btn"
             type="dark"
             onClick={handleGoogleSignIn}
           />
-        </div>
-        <br/>
+       </center>
+        <br />
         <Link to="/phonesignup">
           <div className="d-grid gap-2 mt-3">
-            <Button variant="success" style={{padding: "3% 12%"}} type="Submit">
+            <Button variant="success" style={{ padding: "3% 12%", backgroundColor: "#f1f1dc" }} type="Submit">
               Sign in with Phone
             </Button>
           </div>
-        </Link><br/>
+        </Link><br />
         Don't have an account? <Link to="/signup">Sign up</Link>
-      </div></center>
+      </div>
+      </div>
     </>
   );
 };

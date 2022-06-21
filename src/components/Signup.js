@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/UserAuthContext";
+import "./common.css";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -24,19 +25,31 @@ const Signup = () => {
 
   return (
     <>
+<section className="myStyle">
+<div class="jumbotron jumbotron-fluid myStyle ">
+    <div className="container-fluid" style={{marginTop:"-5%"}}>
+   <nav class="navbar navbar-light">
+  <Link to="/" >
+  <img class="navbar-brand" width="130" height="130" src="https://download.logo.wine/logo/Netflix/Netflix-Logo.wine.png" alt="logo"/>
+  </Link>
+</nav>
+</div>
 
-
- <div style={{backgroundColor:" #a8f1ea",marginLeft:"35%",marginRight:"35%",marginTop:"15%"}}>
-      <div className="container" style={{textAlign:"center"}} ><br/>
-        <h2 className="mb-3"> Signup</h2><br/>
+ <div class="container text-center border" >
+      <div className="form-group" style={{textAlign:"center"}} ><br/>
+        <h2 className="mb-3"> Sign Up</h2><br/>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3 mt-3" controlId="formBasicEmail">
+            
             <Form.Control
               type="email"
               placeholder="Email address"
               onChange={(e) => setEmail(e.target.value)}
             />
+            <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" style={{marginTop:"10px"}} controlId="formBasicPassword">
@@ -48,19 +61,33 @@ const Signup = () => {
           </Form.Group>
 
           <div className="d-grid gap-2" style={{marginTop:"10px"}}>
-            <Button type="Submit" style={{backgroundColor:"yellow",borderColor: "cornsilk",
-    backgroundColor: "#f1f1dc;",
+            <Button type="Submit" style={{
+    backgroundColor: "red",
     padding: "7px;"}}>
-              Sign up
+              Sign Up
             </Button>
           </div><br/>
         </Form>
+        
   </div>
 
       <div className="p-4 box mt-3 text-center" style={{textAlign:"center"}}>
         Already have an account? <Link to="/login">Log In</Link><br/><br/><br/>
       </div>
-      </div>
+  </div>
+  </div>
+  <div className="container-fluid" style={{padding:"30px 100px", backgroundColor:"black"}}>
+                <center>
+                    <h3 style={{color:"#fff"}}>
+                        Developed By <br/></h3><h1 style={{height:"100%",color:"#fff"}}>
+                        Kaustubh Reet
+                    </h1>
+                </center>
+            </div>
+  </section>
+
+  
+ 
     </>
   );
 };

@@ -1,0 +1,8 @@
+.myStyle{
+
+    background-image:linear-gradient(rgb(0 0 0 / 74%),rgb(0 0 0 / 74%)), 
+url('https://assets.nflxext.com/ffe/siteui/vlv3/8ee18735-ada3-45be-b383-a94701054bb9/bffa76da-b175-43bc-b7ef-e47a5095b535/IN-en-20220613-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+color:white;
+background-color: black;
+height: 100%;
+}

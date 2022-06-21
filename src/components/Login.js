@@ -4,6 +4,7 @@ import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import GoogleButton from "react-google-button";
 import { useUserAuth } from "../context/UserAuthContext";
+import "./common.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ const Login = () => {
     setError("");
     try {
       await logIn(email, password);
-      navigate("/");
+      navigate("/design");
     } catch (err) {
       setError(err.message);
     }
@@ -27,7 +28,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate("/");
+      navigate("/design");
     } catch (error) {
       console.log(error.message);
     }
@@ -35,7 +36,17 @@ const Login = () => {
 
   return (
     <>
-<div style={{backgroundColor:" #a8f1ea",marginLeft:"30%",marginRight:"30%",marginTop:"15%",marginBottom:"15%"}}>
+    <section>
+    <div class="jumbotron jumbotron-fluid myStyle ">
+    <div className="container-fluid" style={{marginTop:"-5%"}}>
+   <nav class="navbar navbar-light">
+  <Link to="/">
+  <img class="navbar-brand" width="130" height="130" src="https://download.logo.wine/logo/Netflix/Netflix-Logo.wine.png" alt="logo"/>
+  </Link>
+</nav>
+</div>
+
+<div class="container text-center border">
       <div className="container " style={{ padding: " 15% 30%", borderColor: "lightblue", textAlign: "center" }}>
         <h1 className="mt-3 "> Login</h1><br />
         {error && <Alert variant="danger">{error}</Alert>}
@@ -57,7 +68,7 @@ const Login = () => {
           </Form.Group>
           <br />
           <div className="d-grid gap-2">
-            <Button variant="primary" style={{ padding: "3% 12%", backgroundColor: "#f1f1dc" }} type="Submit" active>
+            <Button style={{ padding: "3% 12%", backgroundColor: "red" }} type="Submit" active>
               Log In
             </Button>
           </div>
@@ -73,7 +84,7 @@ const Login = () => {
         <br />
         <Link to="/phonesignup">
           <div className="d-grid gap-2 mt-3">
-            <Button variant="success" style={{ padding: "3% 12%", backgroundColor: "#f1f1dc" }} type="Submit">
+            <Button style={{ padding: "3% 12%"}} type="Submit">
               Sign in with Phone
             </Button>
           </div>
@@ -81,6 +92,16 @@ const Login = () => {
         Don't have an account? <Link to="/signup">Sign up</Link>
       </div>
       </div>
+      </div>
+      <div className="container-fluid" style={{padding:"30px 100px", backgroundColor:"black"}}>
+                <center>
+                    <h3 style={{color:"#fff"}}>
+                        Developed By <br/></h3><h1 style={{height:"100%",color:"#fff"}}>
+                        Kaustubh Reet
+                    </h1>
+                </center>
+            </div>
+            </section>
     </>
   );
 };

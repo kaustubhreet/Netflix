@@ -3,11 +3,11 @@ import Home from './Home';
 import {Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
-import Basic from "./components/Basic";
 import PhoneSignUp from "./components/PhoneSignUp";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
-//import { Container, Row, Col } from "react-bootstrap";
+import Design from './components/Design';
+
 
 const App=()=> {
   return (
@@ -18,17 +18,17 @@ const App=()=> {
           <UserAuthContextProvider>
             <Routes>
               <Route
-                path="/basic"
+                path="/design"
                 element={
                   <ProtectedRoute>
-                    <Basic />
+                    <Home />
                   </ProtectedRoute>
                 }
               />
 
     
-    <Route exact path="/" element={<Home/>}></Route>
-   
+    <Route exact path="/design" element={<Home/>}></Route>
+    <Route exact path="/" element={<Design/>}></Route>
     <Route exact path="login" element={<Login/>}></Route>
     <Route exact path="signup" element={<Signup/>}></Route>
     <Route exact path="*" element={<not found/>}></Route>

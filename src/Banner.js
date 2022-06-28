@@ -64,7 +64,7 @@ function Banner() {
                         Play 
                        
                     </button>
-                    <button className="play btn">
+                    <button className="play btn" onClick = {() => handleClick(movie)}>
                         My List
                     </button>
                 </div>

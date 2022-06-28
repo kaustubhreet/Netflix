@@ -9,6 +9,8 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
+  const [name,setName]=useState("");
+  const [phone,setPhone]=useState("");
   const { signUp } = useUserAuth();
   let navigate = useNavigate();
 
@@ -16,7 +18,7 @@ const Signup = () => {
     e.preventDefault();
     setError("");
     try {
-      await signUp(email, password);
+      await signUp(email, password,name,phone);
       navigate("/");
     } catch (err) {
       setError(err.message);
@@ -40,7 +42,22 @@ const Signup = () => {
         <h2 className="mb-3"> Sign Up</h2><br/>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3 mt-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" style={{marginLeft:"30%",marginRight:"30%"}} controlId="formBasicPassword">
+            <Form.Control
+              type="text"
+              placeholder="Enter Full name"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" style={{marginLeft:"30%",marginRight:"30%"}}  controlId="formBasicPassword">
+            <Form.Control
+              type="number"
+              placeholder="Enter phone number"
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3 mt-3" style={{marginLeft:"30%",marginRight:"30%"}} controlId="formBasicEmail">
             
             <Form.Control
               type="email"
@@ -52,7 +69,7 @@ const Signup = () => {
         </Form.Text>
           </Form.Group>
 
-          <Form.Group className="mb-3" style={{marginTop:"10px"}} controlId="formBasicPassword">
+          <Form.Group className="mb-3" style={{marginLeft:"30%",marginRight:"30%"}}  controlId="formBasicPassword">
             <Form.Control
               type="password"
               placeholder="Password"

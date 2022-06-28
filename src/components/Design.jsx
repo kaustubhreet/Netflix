@@ -1,10 +1,24 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./design.css";
 import FAQs from './FAQs';
 import { Link } from "react-router-dom";
 
 const Design = () => {
-    
+  const [language,setLanguage]=useState("English");
+
+
+  const clickLanguage=()=>{
+    if(language==="English")
+    setLanguage("Hindi");
+     
+    if(language==="Hindi")
+    setLanguage("English");
+   
+  }
+
+  
+  
+
   return (
    <>
    <section className='de'>
@@ -17,11 +31,12 @@ const Design = () => {
   <form class="form-inline">
     <div class="dropdown">
   <button class="btn btn-outline dropdown-toggle mr-sm-2"  style={{backgroundColor:"black",color:"white"}}  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   English
+   { language }
   </button>
+
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" type="button">English</button>
-    <button class="dropdown-item" type="button">Hindi</button>
+    <button class="dropdown-item" type="button" value="English" onClick={clickLanguage}>English</button>
+    <button class="dropdown-item" type="button" value="Hindi" onClick={clickLanguage}>Hindi</button>
     
   </div>
 </div>

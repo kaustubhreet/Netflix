@@ -28,7 +28,7 @@ const App=()=> {
 
     
     <Route exact path="/design" element={<Home/>}></Route>
-    <Route exact path="/" element={<Design/>}></Route>
+    <Route exact path="/*" element={<Design/>}></Route>
     <Route exact path="login" element={<Login/>}></Route>
     <Route exact path="signup" element={<Signup/>}></Route>
     <Route exact path="*" element={<not found/>}></Route>

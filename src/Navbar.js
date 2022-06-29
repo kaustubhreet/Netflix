@@ -38,7 +38,7 @@ function Navbar()
  <img  className="logoimg" src="https://download.logo.wine/logo/Netflix/Netflix-Logo.wine.png" alt="logo"/></Link>
 
  <img src={user ? user.photoURL : Avatar}  whileTap={{ scale: 0.6 }}
-  className="logoadmin mr-sm-2" onClick={handleLogout} alt="lgoin"/>
+  className="logoadmin mr-sm-2" onClick={handleLogout} alt="USER"/>
     
        </div>
 

@@ -4,7 +4,8 @@ import {getAuth} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCUMwoll0Fn2qznN376iM7j9cXXgu9Pb28",
-  authDomain: "movies-e16e6.firebaseapp.com",
+  //authDomain: "movies-e16e6.firebaseapp.com",
+  authDomain:"https://reet-netflix.netlify.app",
   projectId: "movies-e16e6",
   storageBucket: "movies-e16e6.appspot.com",
   messagingSenderId: "308445837436",

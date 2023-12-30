@@ -26,7 +26,7 @@
     transition: transform 450ms;
     border-radius: 1vw;
     scroll-behavior: smooth;
-    animation: mymove2 5s infinite;
+    animation: mymove2 10s infinite;
     position: relative;
   }
   @keyframes mymove2 {
